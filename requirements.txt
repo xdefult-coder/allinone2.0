@@ -1,0 +1,17 @@
+# Core dependencies
+dnspython==2.4.2
+requests==2.31.0
+fire==0.5.0
+tqdm==4.66.1
+urllib3==1.26.16
+
+# Advanced features
+aiodns==3.1.1
+aiohttp==3.8.5
+beautifulsoup4==4.12.2
+scikit-learn==1.3.0
+joblib==1.3.2
+
+# Output formats
+python-whois==0.8.0
+jsonlines==4.0.0
