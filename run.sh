@@ -22,7 +22,7 @@ echo -e "\033[0m"
 if [ $# -eq 0 ]; then
     echo -e "${RED}Usage: $0 <domain>${NC}"
     echo -e "${YELLOW}Example: $0 example.com${NC}"
-    echo -e "${YELLOW}Example: $0 --target example.com --smart true${NC}"
+    echo -e "${YELLOW}Example: $0 google.com${NC}"
     exit 1
 fi
 
