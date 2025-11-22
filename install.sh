@@ -35,6 +35,10 @@ if ! command -v pip3 &> /dev/null; then
     sudo apt install -y python3-pip
 fi
 
+# Install dependencies directly first
+echo -e "${YELLOW}[*] Installing Python dependencies...${NC}"
+pip3 install fire dnspython requests tqdm
+
 # Create virtual environment
 echo -e "${YELLOW}[*] Setting up virtual environment...${NC}"
 python3 -m venv allinone2-env
@@ -43,11 +47,13 @@ python3 -m venv allinone2-env
 source allinone2-env/bin/activate
 
 # Install requirements
-echo -e "${YELLOW}[*] Installing Python dependencies...${NC}"
 pip3 install -r requirements.txt
 
 # Make scripts executable
 chmod +x allinone2.py run.sh install.sh
+
+# Create results directory
+mkdir -p results
 
 echo -e "${GREEN}"
 echo "╔══════════════════════════════════════════════════════════════╗"
@@ -69,3 +75,6 @@ echo "║    ✓ Smart Relevance Filtering                              ║"
 echo "║    ✓ Advanced DNS Investigation                             ║"
 echo "╚══════════════════════════════════════════════════════════════╝"
 echo -e "${NC}"
+
+echo -e "${YELLOW}[*] Testing installation...${NC}"
+python3 allinone2.py version
